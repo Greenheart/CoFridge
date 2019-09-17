@@ -1,4 +1,4 @@
-import Event, { EVENT_TYPES } from 'event.js'
+import Event, { EVENT_TYPES } from './event.js'
 
 class Fridge {
     constructor() {
