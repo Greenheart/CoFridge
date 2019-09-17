@@ -23,6 +23,9 @@ class Fridge {
     openFridge() {
         this.ui.door.classList.toggle('door-open')
         this.ui.doorInside.classList.toggle('door-open')
+
+        // TODO:
+        // show list of events
     }
 
     showFridgeItems() {
@@ -41,6 +44,29 @@ class Fridge {
         //  - Digital receipts
         //  - Online grocery stores
         //  - Scanned physical receipts
+
+        return [
+            {
+                food_item: 'banana',
+                quantity: 3,
+                expiration_date: '01-09-2019'
+            },
+            {
+                food_item: 'eggs',
+                quantity: 6,
+                expiration_date: '14-09-2019'
+            },
+            {
+                food_item: 'milk',
+                quantity: 1,
+                expiration_date: '17-09-2019'
+            },
+            {
+                food_item: 'zucchini',
+                quantity: 2,
+                expiration_date: '13-09-2019'
+            }
+        ]
     }
 }
 
