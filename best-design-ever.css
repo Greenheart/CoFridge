@@ -18,7 +18,7 @@ body {
 
 .fridge-door {
     position: absolute;
-    z-index: 2;
+    z-index: 20;
     top: 0;
     left: 0;
     background: lightcoral;
@@ -40,7 +40,7 @@ body {
 
 .fridge-door-inside {
     position: absolute;
-    z-index: 1;
+    z-index: 10;
     top: 0;
     left: 0;
     background: lightcoral;

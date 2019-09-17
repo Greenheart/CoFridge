@@ -44,7 +44,7 @@ class Fridge {
                 <li class="event">
                     <h3 class="name">${event.event_name}</h3>
                     <span class="location">Where: ${event.event_location}</span>
-                    <button class="attend" data-id="${event.event_id}">Attend</button>
+                    <button class="attend" style="z-index: 1;" data-id="${event.event_id}">Attend</button>
                 </li>
             `
             })
@@ -54,10 +54,10 @@ class Fridge {
 
         this.ui.eventList.querySelectorAll('button.attend').forEach(btn => {
             btn.addEventListener('click', clickEvent => {
-                const eventDetail = this.events.find(
-                    eventDetails =>
-                        eventDetails.event_id == btn.dataset.event_id
-                )
+                const eventDetail = this.events.find(eventDetails => {
+                    debugger
+                    return eventDetails.event_id == btn.dataset.id
+                })
 
                 this.showEventDetails(eventDetail)
             })
@@ -67,6 +67,8 @@ class Fridge {
     showEventDetails(event) {
         // TODO: show details view.
         // Hide list.
+
+        console.log(event)
     }
 
     getFridgeItems() {
