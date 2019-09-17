@@ -4,20 +4,25 @@ class Fridge {
     constructor() {
         this.ui = {
             door: document.querySelector('.fridge-door'),
-            fridge: document.querySelector('.fridge')
+            doorInside: document.querySelector('.fridge-door-inside'),
+            fridge: document.querySelector('.fridge'),
+            fridgeContent: document.querySelector('.fridge-content')
         }
         this.init()
     }
 
     init() {
-        this.ui.door.addEventListener('click', event => {
-            this.openFridge()
-            this.showFridgeItems()
+        ;[this.ui.door, this.ui.doorInside].forEach(el => {
+            el.addEventListener('click', event => {
+                this.openFridge()
+                this.showFridgeItems()
+            })
         })
     }
 
     openFridge() {
-        // TODO: animate door opening
+        this.ui.door.classList.toggle('door-open')
+        this.ui.doorInside.classList.toggle('door-open')
     }
 
     showFridgeItems() {

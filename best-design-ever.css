@@ -1,0 +1,83 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.fridge {
+    width: 100vw;
+    max-width: 350px;
+    height: 100vh;
+    max-height: 650px;
+    background: lightskyblue;
+    position: relative;
+    border-radius: 15px;
+}
+
+.fridge-door {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background: lightcoral;
+    width: 100vw;
+    max-width: 350px;
+    height: 100vh;
+    max-height: 650px;
+    border-radius: 15px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    transform-origin: left;
+    transition: all 0.5s ease-in-out;
+
+    backface-visibility: hidden;
+}
+
+.fridge-door-inside {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background: lightcoral;
+    width: 100vw;
+    max-width: 350px;
+    height: 100vh;
+    max-height: 650px;
+    border-radius: 15px;
+
+    transform-origin: left;
+    transition: all 0.5s ease-in-out;
+}
+
+.fridge-door h1 {
+    margin-top: 200px;
+}
+
+.fridge-door .handle {
+    position: absolute;
+    top: 55%;
+    right: 30px;
+    background: #000;
+    height: 10px;
+    width: 30px;
+}
+
+.door-open {
+    transform: perspective(1200px) translateZ(0px) translateX(0px)
+        translateY(0px) rotateY(-105deg);
+}
+
+.fridge-content {
+    background-color: grey;
+    position: relative;
+    width: 100vw;
+    max-width: 350px;
+    height: 100vh;
+    max-height: 650px;
+    border-radius: 15px;
+}
