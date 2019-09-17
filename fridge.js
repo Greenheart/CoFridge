@@ -6,8 +6,10 @@ class Fridge {
             door: document.querySelector('.fridge-door'),
             doorInside: document.querySelector('.fridge-door-inside'),
             fridge: document.querySelector('.fridge'),
-            fridgeContent: document.querySelector('.fridge-content')
+            fridgeContent: document.querySelector('.fridge-content'),
+            eventList: document.querySelector('.event-list')
         }
+        this.events = Event.getEvents()
         this.init()
     }
 
@@ -15,7 +17,7 @@ class Fridge {
         ;[this.ui.door, this.ui.doorInside].forEach(el => {
             el.addEventListener('click', event => {
                 this.openFridge()
-                this.showFridgeItems()
+                this.showEvents()
             })
         })
     }
@@ -36,6 +38,35 @@ class Fridge {
     showEvents() {
         // use Event class to show all available events
         // Event types to show: Nearby & public. Only show private if you're friends with the host.
+        const html = this.events
+            .map(event => {
+                return `
+                <li class="event">
+                    <h3 class="name">${event.event_name}</h3>
+                    <span class="location">Where: ${event.event_location}</span>
+                    <button class="attend" data-id="${event.event_id}">Attend</button>
+                </li>
+            `
+            })
+            .join('')
+
+        this.ui.eventList.innerHTML = html
+
+        this.ui.eventList.querySelectorAll('button.attend').forEach(btn => {
+            btn.addEventListener('click', clickEvent => {
+                const eventDetail = this.events.find(
+                    eventDetails =>
+                        eventDetails.event_id == btn.dataset.event_id
+                )
+
+                this.showEventDetails(eventDetail)
+            })
+        })
+    }
+
+    showEventDetails(event) {
+        // TODO: show details view.
+        // Hide list.
     }
 
     getFridgeItems() {

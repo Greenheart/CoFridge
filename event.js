@@ -11,7 +11,7 @@ class Event {
         this.type = eventType
     }
 
-    getEvents() {
+    static getEvents() {
         return [
             {
                 event_id: 1,
@@ -21,7 +21,7 @@ class Event {
                     participant: 'linda',
                     participant: 'lotta'
                 },
-                event_location: "Kalle's",
+                event_location: "Kalle's place",
                 food_items: {
                     food_item: 'tomatoes',
                     food_item: 'basil',
