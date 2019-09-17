@@ -70,17 +70,21 @@ class Fridge {
 
         console.log(event)
 
-        const participants = Object.values(event.participants).map(
-            p => `<li>${p}</li>`
-        )
+        const participants = Object.values(event.participants)
+            .map(p => `<li>${p}</li>`)
+            .join('')
 
         this.ui.eventDetails.innerHTML = `
-            <h2>${event.event_name}</h2>
-            <p>Details</p>
-            <h3>Participants:</h3>
-            <ul class="participants">
-                ${participants.join('')}
-            </ul>
+            <div class="event-detail">
+                <h2>${event.event_name}</h2>
+                <p>Details</p>
+                <h3>Participants:</h3>
+                <ul class="participants">
+                    ${participants}
+                </ul>
+                <p>// Select your ingredients to bring here!</p>
+                <button class="join">Join!</button>
+            </div>
         `
     }
 

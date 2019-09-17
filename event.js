@@ -16,11 +16,7 @@ class Event {
             {
                 event_id: 1,
                 event_name: 'Pasta night',
-                participants: {
-                    participant: 'kalle',
-                    participant: 'linda',
-                    participant: 'lotta'
-                },
+                participants: ['kalle', 'linda', 'lotta'],
                 event_location: "Kalle's place",
                 food_items: {
                     food_item: 'tomatoes',
@@ -31,10 +27,7 @@ class Event {
             {
                 event_id: 2,
                 event_name: 'Sunday dinner',
-                participants: {
-                    participant: 'kalle',
-                    participant: 'linda'
-                },
+                participants: ['lotta', 'petter', 'thomas'],
                 event_location: 'Shared kitchen',
                 food_items: {
                     food_item: 'eggs',
@@ -50,11 +43,7 @@ class Event {
                     participant: 'linda'
                 },
                 event_location: 'Casa Svea',
-                food_items: {
-                    food_item: 'eggs',
-                    food_item: 'banana',
-                    food_item: 'juice'
-                }
+                food_items: ['david', 'oscar']
             }
         ]
     }
