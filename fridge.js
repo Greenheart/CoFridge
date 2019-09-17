@@ -7,7 +7,8 @@ class Fridge {
             doorInside: document.querySelector('.fridge-door-inside'),
             fridge: document.querySelector('.fridge'),
             fridgeContent: document.querySelector('.fridge-content'),
-            eventList: document.querySelector('.event-list')
+            eventList: document.querySelector('.event-list'),
+            eventDetails: document.querySelector('.event-details')
         }
         this.events = Event.getEvents()
         this.init()
