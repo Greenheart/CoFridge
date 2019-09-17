@@ -7,6 +7,7 @@ class Fridge {
             doorInside: document.querySelector('.fridge-door-inside'),
             fridge: document.querySelector('.fridge'),
             fridgeContent: document.querySelector('.fridge-content'),
+            events: document.querySelector('.events'),
             eventList: document.querySelector('.event-list'),
             eventDetails: document.querySelector('.event-details')
         }
@@ -55,10 +56,9 @@ class Fridge {
 
         this.ui.eventList.querySelectorAll('button.attend').forEach(btn => {
             btn.addEventListener('click', clickEvent => {
-                const eventDetail = this.events.find(eventDetails => {
-                    debugger
-                    return eventDetails.event_id == btn.dataset.id
-                })
+                const eventDetail = this.events.find(
+                    eventDetails => eventDetails.event_id == btn.dataset.id
+                )
 
                 this.showEventDetails(eventDetail)
             })
@@ -66,10 +66,22 @@ class Fridge {
     }
 
     showEventDetails(event) {
-        // TODO: show details view.
-        // Hide list.
+        this.ui.events.style.display = 'none'
 
         console.log(event)
+
+        const participants = Object.values(event.participants).map(
+            p => `<li>${p}</li>`
+        )
+
+        this.ui.eventDetails.innerHTML = `
+            <h2>${event.event_name}</h2>
+            <p>Details</p>
+            <h3>Participants:</h3>
+            <ul class="participants">
+                ${participants.join('')}
+            </ul>
+        `
     }
 
     getFridgeItems() {

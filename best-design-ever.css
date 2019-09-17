@@ -23,7 +23,7 @@ body {
     z-index: 20;
     top: 0;
     left: 0;
-    background: lightcoral;
+    background: #b085c8;
     width: 100vw;
     max-width: 350px;
     height: 100vh;
@@ -45,7 +45,7 @@ body {
     z-index: 10;
     top: 0;
     left: 0;
-    background: lightcoral;
+    background: #d3c6da;
     width: 100vw;
     max-width: 350px;
     height: 100vh;
